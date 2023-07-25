@@ -1,38 +1,256 @@
-.App {
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.mainbox{
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin-top: 50px;
+}
+
+.mainbox::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%; 
+  background-size: 20%;
+  left: 85%;
+  top: 50%;
+}
+
+.box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid whitesmoke;
+  overflow: hidden;
+  transition: all ease-in-out 5s;
+  transform: rotate(90deg);
+}
+
+span{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+}
+
+.span1{
+  clip-path: polygon(0 17%,0 50%, 50% 50%);
+  background-color: #643843;
+}
+
+.span2{
+  clip-path: polygon(0 17%,30% 0, 50% 50%);
+  background-color: #99627A;
+}
+
+.span3{
+  clip-path: polygon(30% 0,71% 0%, 50% 50%);
+  background-color: #E7CBCB;
+}
+
+.span4{
+  clip-path: polygon(71% 0,100% 18%, 50% 50%);
+  background-color: #D14D72;
+}
+
+.span5{
+  clip-path: polygon(100% 18%,100% 50%, 50% 50%);
+  background-color: #C88EA7;
+}
+
+.box2{
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+.font{
+  color: #fff;
+  font-size: 20px;
+}
+
+.box1 .span1 h5{
+  position: absolute;
+  top: 38%;
+  right: 76%;
+  transform: rotate(200deg);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box1 .span2 h5{
+  position: absolute;
+  top: 21%;
+  right: 63%;
+  transform: rotate(-130deg);
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box1 .span3 h5{
+  position: absolute;
+  top: 14%;
+  right: 38%;
+  transform: rotate(-90deg);
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box1 .span4 h5{
+  position: absolute;
+  top: 25%;
+  right: 16%;
+  transform: rotate(-45deg);
+  text-align: center;
+}
+
+.box1 .span5 h5{
+  position: absolute;
+  top: 40%;
+  right: 6%;
+  transform: rotate(-15deg);
+  text-align: center;
+}
+
+.box2 .span1 h5{
+  position: absolute;
+  top: 38%;
+  right: 78%;
+  transform: rotate(200deg);
+  text-align: center;
+}
+
+.box2 .span2 h5{
+  position: absolute;
+  top: 24%;
+  right: 57%;
+  transform: rotate(-130deg);
+  text-align: center;
+}
+
+.box2 .span3 h5{
+  position: absolute;
+  top: 15%;
+  right: 40%;
+  transform: rotate(270deg);
+  text-align: center;
+}
+
+.box2 .span4 h5{
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  transform: rotate(310deg);
+  text-align: center;
+}
+
+.box2 .span5 h5{
+  position: absolute;
+  top: 38%;
+  right: 6%;
+  transform: rotate(-20deg);
+  text-align: center;
+}
+
+.spin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background: #1D76E5;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.spin:active{
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.mainbox.animate:after{
+  animation:animateArrow 0.7s ease infinite;
+}
+
+audio{
+  display: none;
+}
+
+.container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.arrow{
+  top: 50%;
+  left: 62%;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
 }
