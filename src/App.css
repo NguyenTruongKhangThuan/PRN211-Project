@@ -50,27 +50,27 @@ span{
   position: absolute;
 }
 
-.span1{
+.span-1{
   clip-path: polygon(0 17%,0 50%, 50% 50%);
   background-color: #643843;
 }
 
-.span2{
+.span-2{
   clip-path: polygon(0 17%,30% 0, 50% 50%);
   background-color: #99627A;
 }
 
-.span3{
+.span-3{
   clip-path: polygon(30% 0,71% 0%, 50% 50%);
   background-color: #E7CBCB;
 }
 
-.span4{
+.span-4{
   clip-path: polygon(71% 0,100% 18%, 50% 50%);
   background-color: #D14D72;
 }
 
-.span5{
+.span-5{
   clip-path: polygon(100% 18%,100% 50%, 50% 50%);
   background-color: #C88EA7;
 }
@@ -86,7 +86,7 @@ span{
   font-size: 20px;
 }
 
-.box1 .span1 h5{
+.box1 .span-1 h5{
   position: absolute;
   top: 38%;
   right: 76%;
@@ -94,7 +94,7 @@ span{
   text-align: center;
 }
 
-.box1 .span2 h5{
+.box1 .span-2 h5{
   position: absolute;
   top: 21%;
   right: 63%;
@@ -102,7 +102,7 @@ span{
   text-align: center;
 }
 
-.box1 .span3 h5{
+.box1 .span-3 h5{
   position: absolute;
   top: 14%;
   right: 38%;
@@ -110,7 +110,7 @@ span{
   text-align: center;
 }
 
-.box1 .span4 h5{
+.box1 .span-4 h5{
   position: absolute;
   top: 25%;
   right: 16%;
@@ -118,7 +118,7 @@ span{
   text-align: center;
 }
 
-.box1 .span5 h5{
+.box1 .span-5 h5{
   position: absolute;
   top: 40%;
   right: 6%;
@@ -126,23 +126,23 @@ span{
   text-align: center;
 }
 
-.box2 .span1 h5{
+.box2 .span-1 h5{
   position: absolute;
   top: 38%;
-  right: 78%;
+  right: 65%;
   transform: rotate(200deg);
   text-align: center;
 }
 
-.box2 .span2 h5{
+.box2 .span-2 h5{
   position: absolute;
-  top: 24%;
-  right: 57%;
+  top: 25%;
+  right: 63%;
   transform: rotate(-130deg);
   text-align: center;
 }
 
-.box2 .span3 h5{
+.box2 .span-3 h5{
   position: absolute;
   top: 15%;
   right: 40%;
@@ -150,15 +150,15 @@ span{
   text-align: center;
 }
 
-.box2 .span4 h5{
+.box2 .span-4 h5{
   position: absolute;
-  top: 20%;
-  right: 20%;
+  top: 19%;
+  right: 23%;
   transform: rotate(310deg);
   text-align: center;
 }
 
-.box2 .span5 h5{
+.box2 .span-5 h5{
   position: absolute;
   top: 38%;
   right: 6%;
